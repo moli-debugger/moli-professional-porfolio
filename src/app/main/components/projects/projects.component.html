@@ -1,0 +1,19 @@
+<div class="container">
+  <h1 class="heading">Sample Projects</h1>
+
+  <div class="gallery">
+    <img
+      *ngFor="let banner of banners"
+      class="gallery-image"
+      [src]="banner.src"
+      [alt]="banner.alt"
+      (click)="openModal(banner)"
+    />
+  </div>
+</div>
+
+<app-project-description
+  *ngIf="showModal"
+  [selectedImage]="selectedImage"
+  (close)="closeModal()"
+></app-project-description>

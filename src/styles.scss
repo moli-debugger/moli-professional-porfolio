@@ -1,6 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
-$primary: #0b2447;
-$secondary: #19376d;
+$primary: #1b262c;
+$primary-text: #0f4c75;
+$secondary: #3282b8;
 .flake {
   overflow-x: hidden;
 }
@@ -182,7 +183,7 @@ html {
 body {
   background: white;
   font-weight: 400;
-  color: $secondary;
+  color: $primary;
   font-family: "Playfair Display", serif;
 }
 
@@ -407,7 +408,7 @@ header {
 .hero .dwnld-cv {
   position: relative;
   z-index: 1000;
-  background-color: $secondary;
+  background-color: $primary;
   color: #ffffff;
   border: none;
   width: 130px;
@@ -668,7 +669,7 @@ section .flex i {
   -ms-flex-align: center;
   align-items: center;
   border-radius: 10px;
-  padding: 1em;
+  padding: 3em;
   -webkit-transition: all 1000ms ease-in-out;
   transition: all 1000ms ease-in-out;
 }
@@ -695,6 +696,8 @@ section .flex i {
   align-items: center;
   position: relative;
   width: 200px;
+  z-index: -1;
+  margin-right: 23px;
 }
 
 .about-me .about-container h4 {

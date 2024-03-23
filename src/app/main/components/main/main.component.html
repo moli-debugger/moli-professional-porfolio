@@ -39,7 +39,9 @@
 <!-- navbar.component.html -->
 
 <nav class="navbar navbar-expand-custom navbar-mainbg">
-  <a class="navbar-brand navbar-logo" href="#">Navbar</a>
+  <a class="navbar-brand navbar-logo" href="javascript:void(0);"
+    >Moli's Portfolio</a
+  >
   <button
     class="navbar-toggler"
     type="button"
@@ -60,61 +62,39 @@
         <div class="left"></div>
         <div class="right"></div>
       </div>
-      <li class="nav-item" (click)="selectNavItem('Dashboard')">
-        <a class="nav-link" href="javascript:void(0);"
-          ><i class="fas fa-tachometer-alt"></i>Dashboard</a
+      <li class="nav-item" (click)="selectNavItem('Home')">
+        <a class="nav-link" (click)="navigate(home)"
+          ><i class="fas fa-tachometer-alt"></i>Home</a
         >
       </li>
-      <li class="nav-item" (click)="selectNavItem('Address Book')">
+      <li class="nav-item" (click)="selectNavItem('About')">
         <a class="nav-link" (click)="navigate(about)"
-          ><i class="far fa-address-book"></i>Address Book</a
+          ><i class="far fa-address-book"></i>About</a
         >
       </li>
-      <li class="nav-item" (click)="selectNavItem('Components')">
-        <a class="nav-link" href="javascript:void(0);"
-          ><i class="far fa-clone"></i>Components</a
+      <li class="nav-item" (click)="selectNavItem('Service')">
+        <a class="nav-link" (click)="navigate(services)"
+          ><i class="far fa-clone"></i>Service</a
         >
       </li>
-      <li class="nav-item" (click)="selectNavItem('Calendar')">
-        <a class="nav-link" href="javascript:void(0);"
-          ><i class="far fa-calendar-alt"></i>Calendar</a
+      <li class="nav-item" (click)="selectNavItem('Skill')">
+        <a class="nav-link" (click)="navigate(skill)"
+          ><i class="far fa-chart-bar"></i>Skill</a
         >
       </li>
-      <li class="nav-item" (click)="selectNavItem('Charts')">
-        <a class="nav-link" href="javascript:void(0);"
-          ><i class="far fa-chart-bar"></i>Charts</a
+      <li class="nav-item" (click)="selectNavItem('Testimonial')">
+        <a class="nav-link" (click)="navigate(testimonial)"
+          ><i class="far fa-calendar-alt"></i>Testimonial</a
         >
       </li>
-      <li class="nav-item" (click)="selectNavItem('Documents')">
-        <a class="nav-link" href="javascript:void(0);"
-          ><i class="far fa-copy"></i>Documents</a
+      <li class="nav-item" (click)="selectNavItem('Projects')">
+        <a class="nav-link" (click)="navigate(project)"
+          ><i class="far fa-copy"></i>Projects</a
         >
       </li>
     </ul>
   </div>
 </nav>
-<!-- ---------------------------- -->
-
-<!-- <div class="nav">
-  <input type="checkbox" id="nav-check" />
-  <div class="nav-header">
-    <div class="nav-title">My Portfolio</div>
-  </div>
-  <div class="nav-btn">
-    <label for="nav-check">
-      <span></span>
-      <span></span>
-      <span></span>
-    </label>
-  </div>
-
-  <div class="nav-links">
-    <a (click)="navigate(home)">Home</a>
-    <a (click)="navigate(about)">About</a>
-    <a (click)="navigate(services)">Services</a>
-    <a (click)="navigate(services)">Contact Me</a>
-  </div>
-</div> -->
 
 <!-- --------------------------------------INTRO------------------------------------------------- -->
 
@@ -151,46 +131,63 @@
 </div>
 <!-- About me -->
 <section #about class="about-me">
-  <div>
-    <img src="../../../../assets/image/aboutSide.svg" class="about-side-img" />
-  </div>
-  <div class="about-container" id="about">
-    <div class="box-container">
-      <img src="../../../../assets/image/fullsize.jpg" class="img-2" />
+  <div class="about-me-block">
+    <!-- <img src="../../../../assets/image/layer.svg" class="layer" /> -->
+    <div>
+      <img
+        src="../../../../assets/image/aboutSide.svg"
+        class="about-side-img"
+      />
     </div>
+    <div
+      class="about-container"
+      id="about"
+      style="
+        background-image: url('../../../../assets/image/layer.svg');
+        background-repeat: no-repeat;
+        background-position: center bottom;
+      "
+    >
+      <div class="box-container">
+        <img
+          src="https://i.pinimg.com/originals/d8/78/48/d878485cac8d590702c9b8cf9c0bdbf9.gif"
+          class="img-2"
+        />
+      </div>
 
-    <div class="about-text" style="padding-top: 2%">
-      <h4>About me</h4>
-      <p>
-        <i class="fa fa-laptop" aria-hidden="true"></i
-        ><span>Software Engineer</span>
-      </p>
-      <p>
-        <i class="fa fa-briefcase" aria-hidden="true"></i
-        ><span>Currently working in Kovai.co</span>
-      </p>
-      <p>
-        <i class="fa fa-child" aria-hidden="true"></i
-        ><span>Date of Birth : 29/01/2001</span>
-      </p>
-      <p>
-        <i class="fa fa-book" aria-hidden="true"></i
-        ><span>Degree : B.SC Information Tecnology</span>
-      </p>
-      <p>
-        <i class="fa fa-graduation-cap" aria-hidden="true"></i
-        ><span>Studied at Sri Krishna Arts and Science College</span>
-      </p>
-      <p>
-        <b
-          ><a href="#"
+      <div class="about-text" style="padding-top: 2%">
+        <h4>About me</h4>
+        <p>
+          <i class="fa fa-laptop" aria-hidden="true"></i
+          ><span>Software Engineer</span>
+        </p>
+        <p>
+          <i class="fa fa-briefcase" aria-hidden="true"></i
+          ><span>Currently working in Kovai.co</span>
+        </p>
+        <p>
+          <i class="fa fa-child" aria-hidden="true"></i
+          ><span>Date of Birth : 29/01/2001</span>
+        </p>
+        <p>
+          <i class="fa fa-book" aria-hidden="true"></i
+          ><span>Degree : B.SC Information Tecnology</span>
+        </p>
+        <p>
+          <i class="fa fa-graduation-cap" aria-hidden="true"></i
+          ><span>Studied at Sri Krishna Arts and Science College</span>
+        </p>
+        <p style="padding-right: 12px">
+          <a href="#"
             ><i class="fa fa-microphone" aria-hidden="true"></i
-            ><span>Talk's about career guidance, .net core and Azure</span></a
-          ></b
-        >
-      </p>
-      <!--<a href="asset/cv.pdf" download="moli's cv"><button class="dwnld-cv"> Download CV</button></a>
+            ><span style="color: black"
+              >Talk's about career guidance, .net core and Azure</span
+            ></a
+          >
+        </p>
+        <!--<a href="asset/cv.pdf" download="moli's cv"><button class="dwnld-cv"> Download CV</button></a>
   !-->
+      </div>
     </div>
   </div>
 </section>
@@ -223,7 +220,7 @@
   </div>
 </section>
 <!--skills section-->
-<section class="skillls">
+<section #skill class="skillls">
   <div class="skills">
     <h2>SKILL's</h2>
     <h5>I'm experienced in...</h5>
@@ -249,4 +246,58 @@
       </div>
     </div>
   </div>
+</section>
+
+<section #testimonial id="testimonial-area">
+  <div style="align-items: center">
+    <div class="row" style="justify-content: center">
+      <div class="col-md-8 offset-md-2">
+        <div class="section-heading text-center">
+          <h5>Career Compass</h5>
+          <h2>Colleague Feedback, Student's Perspective</h2>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+            ad minim veniam.
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="testi-wrap">
+      <div
+        *ngFor="let testimonial of testimonials; let i = index"
+        [class.client-single]="true"
+        [class.active]="testimonial.active"
+        [class.inactive]="!testimonial.active"
+        [ngClass]="testimonial.position"
+        (click)="toggleTestimonial(i)"
+      >
+        <div class="client-img">
+          <!-- {{ testimonial.position }} -->
+
+          <img [src]="testimonial.imageUrl" alt="" />
+        </div>
+        <div class="client-comment">
+          <h3>{{ testimonial.comment }}</h3>
+          <span><i class="fa fa-quote-left"></i></span>
+        </div>
+        <div class="client-info">
+          <h3>Design By</h3>
+          <p>
+            <a [href]="testimonial.link" target="_blank">{{
+              testimonial.designer
+            }}</a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section #project><app-projects></app-projects></section>
+
+<section id="events" #events>
+  <button (click)="load()">Load</button>
+
+  <app-events [timelineElements]="timeline" [showContent]="true"></app-events>
 </section>

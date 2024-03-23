@@ -107,5 +107,8 @@
       }
     }
   },
-  "defaultProject": "moliPortfolio"
+  "defaultProject": "moliPortfolio",
+  "cli": {
+    "analytics": false
+  }
 }
