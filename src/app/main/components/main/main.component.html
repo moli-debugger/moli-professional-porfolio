@@ -1,40 +1,3 @@
-<section id="flake">
-  <div class="flex">
-    <i class="fa fa-android fa-2x flake1"></i>
-    <i class="fa fa-battery-three-quarters fa-3x flake2"></i>
-    <i class="fa fa-television fa-4x flake1"></i>
-    <i class="fa fa-bug fa-3x flake3"></i>
-    <i class="fa fa-check-square fa-5x flake4"></i>
-    <i class="fa fa-child fa-4x flake5"></i>
-    <i class="fa fa-instagram fa-2x flake6"></i>
-    <i class="fa fa-bookmark fa-3x flake8"></i>
-    <i class="fa fa-clock-o fa-2x flake7"></i>
-    <i class="fa fa-amazon fa-2x flake5"></i>
-    <i class="fa fa-coffee fa-4x flake1"></i>
-    <i class="fa fa-apple fa-2x flake6"></i>
-    <i class="fa fa-cogs fa-3x flake4"></i>
-    <i class="fa fa-envelope-o fa-2x flake3"></i>
-    <i class="fa fa-file-code-o fa-3x flake7"></i>
-    <i class="fa fa-eyedropper fa-4x flake8"></i>
-    <i class="fa fa-youtube-play fa-2x flake1"></i>
-    <i class="fa fa-file-image-o fa-5x flake6"></i>
-    <i class="fa fa-film fa-3x flake7"></i>
-    <i class="fa fa-dropbox fa-2x flake5"></i>
-    <i class="fa fa-folder-open-o fa-5x flake4"></i>
-    <i class="fa fa-refresh fa-2x flake3"></i>
-    <i class="fa fa-flag fa-5x flake8"></i>
-    <i class="fa fa-facebook-official fa-2x flake1"></i>
-    <i class="fa fa-headphones fa-3x flake3"></i>
-    <i class="fa fa-heart fa-4x flake4"></i>
-    <i class="fa fa-twitter fa-2x flake8"></i>
-    <i class="fa fa-rss-square fa-4x flake7"></i>
-    <i class="fa fa-github fa-2x flake5"></i>
-    <i class="fa fa-thumb-tack fa-3x flake1"></i>
-    <i class="fa fa-chrome fa-2x flake8"></i>
-    <i class="fa fa-wifi fa-4x flake3"></i>
-    <i class="fa fa-thumbs-up fa-5x flake6"></i>
-  </div>
-</section>
 <!--top nav-bar-->
 <!-- navbar.component.html -->
 
@@ -62,33 +25,36 @@
         <div class="left"></div>
         <div class="right"></div>
       </div>
-      <li class="nav-item" (click)="selectNavItem('Home')">
-        <a class="nav-link" (click)="navigate(home)"
+      <li class="nav-item" (click)="selectNavItem('home')">
+        <a class="nav-link" appRouterActiveLink="/home" routerLink="/home"
           ><i class="fas fa-tachometer-alt"></i>Home</a
         >
       </li>
-      <li class="nav-item" (click)="selectNavItem('About')">
-        <a class="nav-link" (click)="navigate(about)"
+      <li class="nav-item" (click)="selectNavItem('about')">
+        <a
+          class="nav-link"
+          appRouterActiveLink="/about-me"
+          routerLink="/about-me"
           ><i class="far fa-address-book"></i>About</a
         >
       </li>
-      <li class="nav-item" (click)="selectNavItem('Service')">
-        <a class="nav-link" (click)="navigate(services)"
+      <li class="nav-item" (click)="selectNavItem('service')">
+        <a class="nav-link" routerLink="/service"
           ><i class="far fa-clone"></i>Service</a
         >
       </li>
-      <li class="nav-item" (click)="selectNavItem('Skill')">
-        <a class="nav-link" (click)="navigate(skill)"
+      <li class="nav-item" (click)="selectNavItem('skill')">
+        <a class="nav-link" routerLink="/service"
           ><i class="far fa-chart-bar"></i>Skill</a
         >
       </li>
-      <li class="nav-item" (click)="selectNavItem('Testimonial')">
-        <a class="nav-link" (click)="navigate(testimonial)"
+      <!-- <li class="nav-item" (click)="selectNavItem('Testimonial')">
+        <a class="nav-link" routerLink="/testimonial"
           ><i class="far fa-calendar-alt"></i>Testimonial</a
         >
-      </li>
-      <li class="nav-item" (click)="selectNavItem('Projects')">
-        <a class="nav-link" (click)="navigate(project)"
+      </li> -->
+      <li class="nav-item" (click)="selectNavItem('projects')">
+        <a class="nav-link" routerLink="/projects"
           ><i class="far fa-copy"></i>Projects</a
         >
       </li>
@@ -97,158 +63,16 @@
 </nav>
 
 <!-- --------------------------------------INTRO------------------------------------------------- -->
-
-<div #home class="hero">
-  <div class="image">
-    <img src="../../../../assets/image/halfsize.jpg" class="img" />
-  </div>
-
-  <div class="text-container" id="#home">
-    <p>Hello,</p>
-    <p>I'm Mohamed Ali</p>
-    <link
-      href="https://fonts.googleapis.com/css?family=Raleway:200,100,400"
-      rel="stylesheet"
-      type="text/css"
-    />
-    <br />
-    <h1 class="txt-r">
-      I am
-      <span
-        class="txt-rotate"
-        data-period="2000"
-        data-rotate='[ "Fullstack developer.", "speaker.", "open source contributor." ]'
-      ></span>
-    </h1>
-    <br />
-    <a href="mailto:mkmohamedalimoli@gmail.com"
-      ><button class="hire-btn">Mail</button></a
-    >
-    <a href="mohamed's_resume.pdf" download="mohamed's_cv"
-      ><button class="dwnld-cv">Download CV</button></a
-    >
-  </div>
-</div>
-<!-- About me -->
-<section #about class="about-me">
-  <div class="about-me-block">
-    <!-- <img src="../../../../assets/image/layer.svg" class="layer" /> -->
-    <div>
-      <img
-        src="../../../../assets/image/aboutSide.svg"
-        class="about-side-img"
-      />
-    </div>
-    <div
-      class="about-container"
-      id="about"
-      style="
-        background-image: url('../../../../assets/image/layer.svg');
-        background-repeat: no-repeat;
-        background-position: center bottom;
-      "
-    >
-      <div class="box-container">
-        <img
-          src="https://i.pinimg.com/originals/d8/78/48/d878485cac8d590702c9b8cf9c0bdbf9.gif"
-          class="img-2"
-        />
-      </div>
-
-      <div class="about-text" style="padding-top: 2%">
-        <h4>About me</h4>
-        <p>
-          <i class="fa fa-laptop" aria-hidden="true"></i
-          ><span>Software Engineer</span>
-        </p>
-        <p>
-          <i class="fa fa-briefcase" aria-hidden="true"></i
-          ><span>Currently working in Kovai.co</span>
-        </p>
-        <p>
-          <i class="fa fa-child" aria-hidden="true"></i
-          ><span>Date of Birth : 29/01/2001</span>
-        </p>
-        <p>
-          <i class="fa fa-book" aria-hidden="true"></i
-          ><span>Degree : B.SC Information Tecnology</span>
-        </p>
-        <p>
-          <i class="fa fa-graduation-cap" aria-hidden="true"></i
-          ><span>Studied at Sri Krishna Arts and Science College</span>
-        </p>
-        <p style="padding-right: 12px">
-          <a href="#"
-            ><i class="fa fa-microphone" aria-hidden="true"></i
-            ><span style="color: black"
-              >Talk's about career guidance, .net core and Azure</span
-            ></a
-          >
-        </p>
-        <!--<a href="asset/cv.pdf" download="moli's cv"><button class="dwnld-cv"> Download CV</button></a>
-  !-->
-      </div>
-    </div>
-  </div>
+<section class="container">
+  <router-outlet></router-outlet>
 </section>
+<!-- About me -->
 
 <!--services section-->
-<section #services class="servicess">
-  <div class="services" id="service">
-    <div class="services-text">
-      <h2>Services</h2>
-    </div>
-    <img class="pylap" src="./image/icons/python-cutout.png" alt="" />
-    <br />
 
-    <div class="details">
-      <div class="content">
-        <p>
-          As a <span style="font-weight: bold">.net developer</span>, I have
-          gained knowledge about as a learner
-        </p>
-        <p>
-          which gives me common experience that made me as a professional techie
-          now. Learning new skills makes the developer unique.
-        </p>
-        <p>
-          Lets learn and explore this technical world together, if you wish to
-          collaborate with me, feel free to reach me out.
-        </p>
-      </div>
-    </div>
-  </div>
-</section>
 <!--skills section-->
-<section #skill class="skillls">
-  <div class="skills">
-    <h2>SKILL's</h2>
-    <h5>I'm experienced in...</h5>
-    <div class="skill-img">
-      <div class="image">
-        <img src="../../../../assets/image/logo/angular.svg" class="tensor" />
-      </div>
-      <div class="image">
-        <img src="../../../../assets/image/logo/dotnet.svg" class="gcp" />
-      </div>
-      <div class="larger">
-        <img
-          src="../../../../assets/image/logo/microsoft-sql-server-logo-svgrepo-com.svg"
-          class="cv2"
-          title="Hello from speech bubble!"
-        />
-      </div>
-      <div class="image">
-        <img src="../../../../assets/image/logo/azure.svg" class="cloud" />
-      </div>
-      <div class="wider">
-        <img src="../../../../assets/image/icons/py-logo.png" class="png1" />
-      </div>
-    </div>
-  </div>
-</section>
 
-<section #testimonial id="testimonial-area">
+<!-- <section #testimonial id="testimonial-area">
   <div style="align-items: center">
     <div class="row" style="justify-content: center">
       <div class="col-md-8 offset-md-2">
@@ -273,8 +97,6 @@
         (click)="toggleTestimonial(i)"
       >
         <div class="client-img">
-          <!-- {{ testimonial.position }} -->
-
           <img [src]="testimonial.imageUrl" alt="" />
         </div>
         <div class="client-comment">
@@ -292,12 +114,8 @@
       </div>
     </div>
   </div>
-</section>
+</section> -->
 
-<section #project><app-projects></app-projects></section>
+<!-- <section #project><app-projects></app-projects></section> -->
 
-<section id="events" #events>
-  <button (click)="load()">Load</button>
-
-  <app-events [timelineElements]="timeline" [showContent]="true"></app-events>
-</section>
+<!-- <section id="events" #events></section> -->

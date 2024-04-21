@@ -1,3 +1,4 @@
+import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
 import {
   AfterViewInit,
   Component,
@@ -10,8 +11,6 @@ import {
   TimelineElement,
   TimelineEvent,
 } from '../../Data/models/events-timeline.model';
-
-import { Book } from '@labsforge/flipbook';
 
 @Component({
   selector: 'app-main',
@@ -95,68 +94,23 @@ export class MainComponent implements AfterViewInit, OnInit {
     },
   ];
 
-  public load() {
-    this.timeline = [
-      {
-        caption: '16 Jan',
-        date: new Date(2014, 1, 16),
-        selected: true,
-        title: 'Horizontal Timeline',
-        content: this.content,
-      },
-      {
-        caption: '28 Feb',
-        date: new Date(2014, 2, 28),
-        title: 'Event title here',
-        content: this.content,
-      },
-      {
-        caption: '30 Aug',
-        date: new Date(2014, 8, 30),
-        title: 'Event title here',
-        content: this.content,
-      },
-      {
-        caption: '15 Sep',
-        date: new Date(2014, 9, 15),
-        title: 'Event title here',
-        content: this.content,
-      },
-      {
-        caption: '01 Nov',
-        date: new Date(2014, 11, 1),
-        title: 'Event title here',
-        content: this.content,
-      },
-      {
-        caption: '10 Dec',
-        date: new Date(2014, 12, 10),
-        title: 'Event title here',
-        content: this.content,
-      },
-      {
-        caption: '29 Jan',
-        date: new Date(2015, 1, 19),
-        title: 'Event title here',
-        content: this.content,
-      },
-      {
-        caption: '3 Mar',
-        date: new Date(2015, 3, 3),
-        title: 'Event title here',
-        content: this.content,
-      },
-    ];
-  }
-
   selectorStyle: { [key: string]: string } = {};
   isNavbarCollapsed = false;
   activeItem: any | HTMLElement;
 
-  constructor(private renderer: Renderer2) {}
+  constructor(
+    private renderer: Renderer2,
+    private route: ActivatedRoute,
+    private router: Router
+  ) {}
   ngOnInit() {}
   ngAfterViewInit() {
-    this.selectNavItem('Home');
+    this.router.events.subscribe((event) => {
+      if (event instanceof NavigationEnd) {
+        const activePath = this.router.url.split('/');
+        this.selectNavItem(activePath[1]);
+      }
+    });
     setTimeout(() => {
       this.updateSelector();
     }, 500);
@@ -172,16 +126,19 @@ export class MainComponent implements AfterViewInit, OnInit {
   }
 
   selectNavItem(item: string) {
-    console.log(item, 'item');
+    // console.log(item, 'item');
     if (this.navItems) {
-      console.log(this.navItems);
+      // console.log(this.navItems);
       this.navItems.nativeElement.childNodes.forEach((navItem: any) => {
         this.renderer.removeClass(navItem, 'active');
       });
 
       const targetNavItem = Array.from(
         this.navItems.nativeElement.childNodes
-      ).find((navItem: any) => navItem.textContent.includes(item));
+      ).find((navItem: any) => {
+        const navItemContent = navItem.textContent.toLowerCase();
+        return navItemContent.includes(item.toLowerCase());
+      });
       if (targetNavItem) {
         console.log('targetNavItem', targetNavItem);
         this.renderer.addClass(targetNavItem, 'active');

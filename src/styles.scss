@@ -11,7 +11,7 @@ $secondary: #3282b8;
   height: 106vh;
   margin: 0px auto;
   position: absolute;
-  opacity: 0.3;
+  opacity: 1;
   overflow-y: hidden;
 }
 i {
@@ -910,7 +910,7 @@ section .flex i {
   align-items: center;
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: (100px) [2];
+  -ms-grid-columns: (100px) 2;
   grid-template-columns: repeat(2, 100px);
   -ms-grid-rows: 100px;
   grid-template-rows: 100px;
