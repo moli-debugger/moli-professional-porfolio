@@ -17,21 +17,39 @@ export class HeroCardComponent implements OnInit {
 
   constructor() {}
 
-  ngOnInit(): void {
-    this.interval = setInterval(() => {
-      this.rotateText();
-    }, this.period);
+  ngOnInit() {
+    this.rotateText();
   }
 
-  ngOnDestroy(): void {
+  ngOnDestroy() {
     clearInterval(this.interval);
   }
 
-  private rotateText(): void {
+  private async rotateText() {
     const textElement = document.querySelector('.txt-rotate');
     if (textElement) {
-      textElement.textContent = this.phrases[this.index];
-      this.index = (this.index + 1) % this.phrases.length;
+      const typingSpeed = 100; // Adjust typing speed as needed
+      let i = 0;
+      const typeInterval = setInterval(() => {
+        textElement.textContent += this.phrases[this.index].charAt(i);
+        i++;
+        if (i > this.phrases[this.index].length) {
+          clearInterval(typeInterval);
+          this.index++;
+          if (this.index < this.phrases.length) {
+            setTimeout(() => {
+              textElement.textContent = '';
+              this.rotateText();
+            }, 1000); // Delay before typing the next text
+          } else {
+            this.index = 0;
+            setTimeout(() => {
+              textElement.textContent = '';
+              this.rotateText();
+            }, 1000);
+          }
+        }
+      }, typingSpeed);
     }
   }
 }

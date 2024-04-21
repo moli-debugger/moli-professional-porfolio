@@ -26,36 +26,28 @@
         <div class="right"></div>
       </div>
       <li class="nav-item" (click)="selectNavItem('home')">
-        <a class="nav-link" appRouterActiveLink="/home" routerLink="/home"
-          ><i class="fas fa-tachometer-alt"></i>Home</a
+        <a class="nav-link" (click)="navigate('home')"
+          ><i class="fas fa-home"></i>Home</a
         >
       </li>
       <li class="nav-item" (click)="selectNavItem('about')">
-        <a
-          class="nav-link"
-          appRouterActiveLink="/about-me"
-          routerLink="/about-me"
-          ><i class="far fa-address-book"></i>About</a
+        <a class="nav-link" (click)="navigate('about')"
+          ><i class="fa fa-user"></i>About</a
         >
       </li>
       <li class="nav-item" (click)="selectNavItem('service')">
-        <a class="nav-link" routerLink="/service"
-          ><i class="far fa-clone"></i>Service</a
+        <a class="nav-link" (click)="navigate('service')"
+          ><i class="fas fa-handshake"></i>Service</a
         >
       </li>
-      <li class="nav-item" (click)="selectNavItem('skill')">
-        <a class="nav-link" routerLink="/service"
-          ><i class="far fa-chart-bar"></i>Skill</a
-        >
-      </li>
-      <!-- <li class="nav-item" (click)="selectNavItem('Testimonial')">
-        <a class="nav-link" routerLink="/testimonial"
-          ><i class="far fa-calendar-alt"></i>Testimonial</a
-        >
-      </li> -->
       <li class="nav-item" (click)="selectNavItem('projects')">
-        <a class="nav-link" routerLink="/projects"
-          ><i class="far fa-copy"></i>Projects</a
+        <a class="nav-link" (click)="navigate('projects')"
+          ><i class="fa fa-code"></i>Projects</a
+        >
+      </li>
+      <li class="nav-item" (click)="selectNavItem('contact')">
+        <a class="nav-link" (click)="navigate('home')"
+          ><i class="fa fa-mobile"></i>Contact</a
         >
       </li>
     </ul>
@@ -63,59 +55,10 @@
 </nav>
 
 <!-- --------------------------------------INTRO------------------------------------------------- -->
-<section class="container">
-  <router-outlet></router-outlet>
-</section>
-<!-- About me -->
+<app-hero-card></app-hero-card>
 
-<!--services section-->
+<app-about-me></app-about-me>
 
-<!--skills section-->
+<app-my-service></app-my-service>
 
-<!-- <section #testimonial id="testimonial-area">
-  <div style="align-items: center">
-    <div class="row" style="justify-content: center">
-      <div class="col-md-8 offset-md-2">
-        <div class="section-heading text-center">
-          <h5>Career Compass</h5>
-          <h2>Colleague Feedback, Student's Perspective</h2>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam.
-          </p>
-        </div>
-      </div>
-    </div>
-    <div class="testi-wrap">
-      <div
-        *ngFor="let testimonial of testimonials; let i = index"
-        [class.client-single]="true"
-        [class.active]="testimonial.active"
-        [class.inactive]="!testimonial.active"
-        [ngClass]="testimonial.position"
-        (click)="toggleTestimonial(i)"
-      >
-        <div class="client-img">
-          <img [src]="testimonial.imageUrl" alt="" />
-        </div>
-        <div class="client-comment">
-          <h3>{{ testimonial.comment }}</h3>
-          <span><i class="fa fa-quote-left"></i></span>
-        </div>
-        <div class="client-info">
-          <h3>Design By</h3>
-          <p>
-            <a [href]="testimonial.link" target="_blank">{{
-              testimonial.designer
-            }}</a>
-          </p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section> -->
-
-<!-- <section #project><app-projects></app-projects></section> -->
-
-<!-- <section id="events" #events></section> -->
+<app-projects></app-projects>

@@ -108,7 +108,7 @@ export class MainComponent implements AfterViewInit, OnInit {
     this.router.events.subscribe((event) => {
       if (event instanceof NavigationEnd) {
         const activePath = this.router.url.split('/');
-        this.selectNavItem(activePath[1]);
+        this.selectNavItem('home');
       }
     });
     setTimeout(() => {
@@ -133,7 +133,7 @@ export class MainComponent implements AfterViewInit, OnInit {
         this.renderer.removeClass(navItem, 'active');
       });
 
-      const targetNavItem = Array.from(
+      const targetNavItem: any = Array.from(
         this.navItems.nativeElement.childNodes
       ).find((navItem: any) => {
         const navItemContent = navItem.textContent.toLowerCase();
@@ -143,6 +143,7 @@ export class MainComponent implements AfterViewInit, OnInit {
         console.log('targetNavItem', targetNavItem);
         this.renderer.addClass(targetNavItem, 'active');
         this.updateSelector();
+        // this.navigate(targetNavItem.innerText);
       }
     }
   }
@@ -173,7 +174,11 @@ export class MainComponent implements AfterViewInit, OnInit {
   }
 
   // -----------
-  navigate(element: HTMLElement) {
+  navigate(id: string) {
+    const element = document.getElementById(id);
+    if (!element) {
+      return;
+    }
     setTimeout(() => {
       element.scrollIntoView({ behavior: 'smooth' });
     }, 500);

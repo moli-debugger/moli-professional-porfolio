@@ -9,30 +9,21 @@ import { ProjectsComponent } from './main/components/projects/projects.component
 
 const routes: Routes = [
   {
-    path: '',
-    redirectTo: '/home',
-    pathMatch: 'full',
+    path: 'index',
+    component: MainComponent,
   },
-  {
-    path: 'home',
-    component: HeroCardComponent,
-  },
-  {
-    path: 'about',
-    component: AboutMeComponent,
-  },
-  {
-    path: 'service',
-    component: MyServiceComponent,
-  },
-  {
-    path: 'projects',
-    component: ProjectsComponent,
-  },
-  {
-    path: 'testimonial',
-    component: ProjectsComponent,
-  },
+  // {
+  //   path: 'service',
+  //   component: MyServiceComponent,
+  // },
+  // {
+  //   path: 'projects',
+  //   component: ProjectsComponent,
+  // },
+  // {
+  //   path: 'testimonial',
+  //   component: ProjectsComponent,
+  // },
 ];
 
 @NgModule({
