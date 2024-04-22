@@ -153,7 +153,7 @@ html {
 body {
   background: white;
   font-weight: 400;
-  color: $primary;
+  color: $primary-text;
   font-family: "Playfair Display", serif;
 }
 
@@ -378,7 +378,7 @@ header {
 .hero .dwnld-cv {
   position: relative;
   z-index: 1000;
-  background-color: $primary;
+  background-color: $primary-text;
   color: #ffffff;
   border: none;
   width: 130px;
@@ -607,9 +607,13 @@ section .flex i {
   margin-right: 4px;
   margin-left: 4px;
   margin-bottom: 6px;
-  color: #696969;
+  color: $primary-text;
 }
 
+.about-text {
+  padding-top: 2%;
+  padding-left: 5%;
+}
 .about-me .about-text span {
   color: black;
 }
@@ -665,7 +669,7 @@ section .flex i {
   -ms-flex-align: center;
   align-items: center;
   position: relative;
-  width: 200px;
+  width: 100%;
   z-index: -1;
   margin-right: 23px;
 }

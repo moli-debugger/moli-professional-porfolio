@@ -1,10 +1,13 @@
 <div class="about-me about-me-block">
   <!-- <img src="../../../../assets/image/layer.svg" class="layer" /> -->
-  <div>
+  <!-- <div>
     <img src="../../../../assets/image/aboutSide.svg" class="about-side-img" />
-  </div>
+  </div> -->
+
   <div
     class="about-container"
+    (mouseenter)="toggleSpin()"
+    (mouseleave)="toggleSpin()"
     id="about"
     style="
       background-image: url('../../../../assets/image/layer.svg');
@@ -12,14 +15,37 @@
       background-position: center bottom;
     "
   >
+    <!-- <img src="../../assets/image/session-img.png" /> -->
     <div class="box-container">
-      <img
-        src="https://i.pinimg.com/originals/d8/78/48/d878485cac8d590702c9b8cf9c0bdbf9.gif"
-        class="img-2"
-      />
+      <div
+        id="border-back"
+        #borderBack
+        [class.spin]="isHovered"
+        [class.spin-visible]="isHovered"
+      ></div>
+      <img [src]="imageUrls[currentImageUrlIndex]" class="abt--image" />
+      <div
+        id="border-front"
+        #borderFront
+        [class.spin]="isHovered"
+        [class.spin-visible]="isHovered"
+      ></div>
     </div>
+    <!-- <div
+      id="border-back"
+      [class.spin]="isHovered"
+      (mouseenter)="toggleSpin()"
+      (mouseleave)="toggleSpin()"
+    ></div>
+    <div class="image"></div>
+    <div
+      id="border-front"
+      [class.spin]="isHovered"
+      (mouseenter)="toggleSpin()"
+      (mouseleave)="toggleSpin()"
+    ></div> -->
 
-    <div class="about-text" style="padding-top: 2%">
+    <div class="about-text">
       <h4>About me</h4>
       <p>
         <i class="fa fa-laptop" aria-hidden="true"></i
